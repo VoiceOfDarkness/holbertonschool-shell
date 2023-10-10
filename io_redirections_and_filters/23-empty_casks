@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -al | find -empty
+find . -type d -empty -exec sh -c 'printf "%s\n" "${0##*/}"' {} \; -o -type f -empty -exec sh -c 'printf "%s\n" "${0##*/}"' {} \; ; echo
